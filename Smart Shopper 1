@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int cost1,qty1;
+    int cost2,qty2;
+    int cost3,qty3;
+    int budget;
+
+    scanf("%d%d",&cost1,&qty1);
+    scanf("%d%d",&cost2,&qty2);
+    scanf("%d%d",&cost3,&qty3);
+    scanf("%d",&budget);
+
+    double total_before_tax=(cost1*qty1)+(cost2*qty2)+(cost3*qty3);
+    double tax=total_before_tax*0.10;
+    double total_after_tax=total_before_tax+tax;
+
+    printf("Total (Before Tax): %.2f\n",total_before_tax);
+    printf("Total (After Tax): %.2f\n",total_after_tax);
+
+    if (total_after_tax<=budget) {
+        printf("Within Budget");
+    } else {
+        printf("Over Budget");
+    }
+
+    return 0;
+}
